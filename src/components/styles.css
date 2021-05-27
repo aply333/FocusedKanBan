@@ -1,0 +1,119 @@
+.inputPop {
+  position: absolute;
+  width: 20rem;
+  height: 15rem;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 10rem;
+  z-index: 99 !important;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  border-radius: 4px;
+  color: #0B7189;
+  padding: 0.5rem;
+  box-shadow: 4px 4px 20px 10px rgba(81, 87, 81, 0.4);
+}
+
+
+.card {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  border-radius: 0px 8px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  transition: all 0.5s ease;
+  position: relative;
+  z-index: 0;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card h3{
+  max-width: 10rem;
+}
+
+.card p{
+  max-width: 80%;
+}
+
+.innerColumn{
+  min-width: 20rem;
+  max-width: 45rem;
+  min-height: 15rem;
+  max-height: 75rem;
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-left: 1rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.columnHeader{
+  display: flex;
+  justify-content: space-between;
+  height: 3rem;
+  margin-bottom: .5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.columnHeader h3{
+  font-size: 1.75rem;
+  text-decoration: underline;
+  font-weight: 450;
+  margin-top: 0.25rem;
+}
+
+.addButton {
+  margin-top: 1rem;
+  width: 3rem;
+  height: 3rem;
+  font-size: 2rem;
+  color: #252323;
+  background-color: #f5f9e9;
+  border: none;
+  border-radius: 50px;
+  transition: all 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.addButton:hover {
+  background-color: #F28F3B;
+  color: #FDFFFC;
+  margin-top: 0.5rem;
+}
+
+
+
+
+/* .inputPop h1 {
+  font-size: 1.5rem;
+  margin-top: 0.25rem;
+} */
+
+.inputPop button {
+  background-color: #FDFFFC;
+  border: none;
+  border-radius: 4px;
+  width: 5rem;
+  height: 1.5rem;
+  margin: 0.25rem auto;
+}
+.inputPop input[type=submit]{
+  background-color: #FDFFFC;
+  border: none;
+  border-radius: 4px;
+  width: 5rem;
+  height: 1.5rem;
+  margin: 0.25rem auto;
+}
+
+.cardContent{
+  margin-top: 0.5rem;
+  margin-right: 0px;
+}
