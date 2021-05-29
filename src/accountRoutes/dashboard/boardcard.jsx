@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
+import { useHistory } from "react-router";
 import { bcStyles } from "./dashStyles";
 
-function BoardCard() {
+function BoardCard({board}) {
   const [onOver, setOnOver] = useState(false);
   const [hoverStyles, setHoverStyles] = useState({});
   const handleHover = () => {
     onOver === false ? setOnOver(true) : setOnOver(false);
   };
+
+  const history = useHistory()
+
   useEffect(() => {
     if (onOver === false) {
       setHoverStyles({});
@@ -26,10 +30,13 @@ function BoardCard() {
       onMouseLeave={()=>{
         handleHover()
       }}
+      onClick = {e => {
+        history.push("/board")
+      }}
     >
-      <div style={bcStyles.text}>
-        <h1 style={bcStyles.header}>Card</h1>
-        <p>Stuff and things about the board.</p>
+      <div style={bcStyles.text} >
+        <h1 style={bcStyles.header}>{board.board_name}</h1>
+        <p>{board.description}</p>
       </div>
     </div>
   );

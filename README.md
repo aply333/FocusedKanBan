@@ -14,6 +14,33 @@
 
 ---
 
+### May 29 2021:
+
+- Began connecting Back-End to the Front-End:
+  - Currently Only working on basic post/get requests. All routes and logins a user will need to simply view the current contents. Once these routes/connections are made I plan on moving onto the puts and post.
+    - I see a future struggle comming, when I reach the board, I have a custom made hook/state managing the cards and columns. The question I and trying to answer, is how do I intend to make the edits to the board accurently get reflected onto the back end.
+      - Post should be simple, as they are created in the management tool, they should be correct for the database.
+      - Moving cards/columns: My current running idea: I need to ensure that both the active card/column and the surounding cards/columns are accurately updated. I have a tool that ensures that spliced data has their IDs updated correctly, it checks the id, sees if its position is correct. This should reflect the database, so on the case this tool makes a change, I could have it also update the card on the backend. Question? Do I do a put and just change cards around that way, or do I delete and remake the cards.
+  - Connected and have working:
+    - The Login pages takes, validates and directs user. Still need input validation but not too crucial, if its wrong then the user simply would not have access, that being said I should atleast create a notification of this event.
+    - Dashboard: onload, pull user's current boards and displays them. On clicking on project card, the user is redirected to the board route.
+  - What I am actively building:
+    - Connecting the board to the database. 
+      - Have it load what has been saved to the database.
+        1. Load into redux the board state.
+        2. Have boardState management reflect the initial load.
+      - This was mentioned earlier: Edits and updates.
+        1. Insert new cards.
+        2. Insert new column.
+        3. Rearange cards and update database accordingly.
+        4. Rearange column and update database accordingly.
+        5. Delete card and udpate accordingly.
+        6. Delete column and update accordingly.
+      - I may want to create another table to store cards that stores the deleated cards, or I would want there to be an attribute to the existing cards/columns table, that states if trashed or not.
+        - I think I would preffer the later. This may be quicker rather than moving contents from one table to another.
+
+
+
 ### May 27 2021:
 
 - Base Backend has been built:
