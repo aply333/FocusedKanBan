@@ -17,7 +17,6 @@ export const loginAction = (credentials) => (dispatch) => {
             
         })
         .catch(err=> {
-            console.log(err)
             dispatch({
                 type: actionTypes.POST_LOGIN_FAIL,
                 payload: err

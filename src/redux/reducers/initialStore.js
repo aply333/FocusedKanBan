@@ -8,11 +8,13 @@ export const initialAccount = {
 export const initialDash = {
   dashFetch: false,
   dashError: "",
+  selectedBoard: "",
   availableBoards:{ }
 }
 
 export const initialBoard = {
   boardFetch: false,
   boardError: "",
-  boardData:{}
+  boardData:{},
+  selectedCard: ""
 }

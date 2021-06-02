@@ -14,6 +14,39 @@
 
 ---
 
+### June 1 2021:
+
+- Removed old code, none of it is connected. Sits in a hidden folder for the time being.
+
+- Rebuilt Board Itself.
+
+  - NavBar component was, untethered to the dashboard. Now it is shareable, and both the dashboard and kanboard use it. It will take in components as a props, this allows the actions to be better tailored to each section.
+
+  - KanBan board was built from scratch to incorporate a better look and to utilize redux.
+
+    - New card & column components:
+
+      - Trimmed down aesthetic, leaving for a cleaner and more focused look.
+      - Components are connected to redux.
+      - Components render based on data provided from the back-end.
+      - React-DND is connected, these components move around and drag.
+        - They do recognize drops but nothing happens. Currently building out system to track where card/column is dropped. Then after the drop the components needs to update the backend, of its new location and any relative entry changes.
+
+    - Board is connected to redux, at the momment on load it will check to see if there is data to render, if/when there is the board will render column and cards in their correct locations.
+
+    - Board navBar, behaves identically to the one on the dash board. Two buttons, one for settings, and the other one now access a board editing menu. 
+
+      - Currently just contains two forms. One to create a new column, the other to create a new card.
+        - New Column: Will append a column directly to the right. Following the last column seen.
+        - New Card:
+          - Shows a sample card as you create it.
+          - The sample card can be dragged.
+            - ---- Plans for new card ----
+            - If user chooses to they can drag the "sample card" directly to the board, to confirm it.
+            - Or, user can hit a submit button which will quickly add the card to the first column on the list.
+
+      
+
 ### May 29 2021:
 
 - Began connecting Back-End to the Front-End:

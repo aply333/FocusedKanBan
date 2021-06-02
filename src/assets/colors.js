@@ -14,6 +14,7 @@ const Colors = {
   neutral_accent: "#515751",
   light_accent: "#F28F3B",
   white: "#FDFFFC",
+  offWhite: "#E5E4E2",
 };
 
 export default Colors;

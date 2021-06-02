@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { connect } from "react-redux";
 import { useHistory } from "react-router";
+import { selectBoard } from "../../redux/actions/dashActions";
 import { bcStyles } from "./dashStyles";
 
-function BoardCard({board}) {
+function BoardCard({board, selectBoard}) {
   const [onOver, setOnOver] = useState(false);
   const [hoverStyles, setHoverStyles] = useState({});
   const handleHover = () => {
@@ -31,6 +33,7 @@ function BoardCard({board}) {
         handleHover()
       }}
       onClick = {e => {
+        selectBoard(board.board_id)
         history.push("/board")
       }}
     >
@@ -42,4 +45,8 @@ function BoardCard({board}) {
   );
 }
 
-export default BoardCard;
+const mapStateToProps = state => {
+  return{}
+}
+
+export default connect(mapStateToProps,{selectBoard})(BoardCard);

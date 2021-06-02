@@ -10,7 +10,6 @@ import { useHistory } from "react-router";
 function Login({loginAction, isFetch}) {
   const { register, handleSubmit } = useForm();
   function handleLogin(data) {
-    console.log("from form",data);
     loginAction(data)
   }
 

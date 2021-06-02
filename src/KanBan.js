@@ -1,4 +1,4 @@
-import React,{ useState } from "react";
+import React,{ useEffect, useState } from "react";
 import Board from "./components/board";
 import Col from "./components/col";
 import NavBar from "./components/navBar";
@@ -7,6 +7,9 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import { useCardState } from "./customHooks/cardManage";
 import DeleteBin from "./components/subComponents/deleteBin";
 import BinContents from "./components/subComponents/binContents";
+import { connect } from "react-redux";
+import { getCompleteBoard } from "./redux/actions/boardAction";
+
 
 
 const testdata = [
@@ -84,7 +87,18 @@ const testdata = [
   },
 ];
 
-function KanBan() {
+function KanBan({getCompleteBoard, boardId, boardInit}) {
+
+  useEffect(()=> {
+    getCompleteBoard(boardId)
+  },[])
+
+  useEffect(()=> {
+    console.log("loging",boardInit)
+  }, [boardInit])
+
+  const [isLoaded, setIsLoaded] = useState(false)
+  
 
   const [
     cardState,
@@ -156,4 +170,11 @@ function KanBan() {
   );
 }
 
-export default KanBan;
+const mapStateToProps = (state) => {
+  return{
+    boardId: state.dash.selectedBoard,
+    boardInit: state.board.boardData
+  }
+}
+
+export default connect(mapStateToProps, {getCompleteBoard})(KanBan);
